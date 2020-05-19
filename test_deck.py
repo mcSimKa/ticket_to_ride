@@ -12,6 +12,11 @@ class MyTestCase(unittest.TestCase):
         self.assertEqual([2,3,4,5,6],hand)
         self.assertEqual(8, len(self.card_deck.deck))
 
+    def test_deal_no_cards(self):
+        hand = self.card_deck.deal_cards(0)
+        self.assertEqual([], hand)
+        self.assertEqual(13, len(self.card_deck.deck))
+
     def test_create_deck(self):
         self.assertEqual([2,3,4,5,6], self.card_deck.deck[0:5])
         self.assertEqual(13, len(self.card_deck.deck))
